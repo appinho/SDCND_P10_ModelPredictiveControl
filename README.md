@@ -1,6 +1,14 @@
 # CarND-Controls-MPC
 Self-Driving Car Engineer Nanodegree Program
 
+The chosen model has a six-dimensional state vector whereas the first four describe the dynamic behavior of the car where there is the position in x and y direction as well as the car's orientation and velocity. The remaining two state vector entries contain the Cross Track Error and Orientation Error of the car.  
+As actuators the car's steering angle and throttle/brake is chosen which leads to a two-dimensional vector.  
+As update equation the Kinematic model is used.
+
+As hyperparameters 'N=10' nodes on the predicted trajectory are chosen with a time difference of 'dt = 0.1'. This is a good mix of not predicted too many nodes, to save runtime, and having a reactive behavior of the MPC by choosing a small 'dt'.  
+
+With latency is dealt by using previous actuations for all preceeding timestamps in the constraint analysis in class 'FG_eval' function 'operator()'.
+
 ---
 
 ## Dependencies
