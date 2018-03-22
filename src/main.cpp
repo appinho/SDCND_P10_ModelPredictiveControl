@@ -114,7 +114,7 @@ int main() {
           // Fill in state vector
           Eigen::VectorXd state(6);
           double cte = polyeval(coeffs, 0);
-          double epsi = psi - atan(coeffs[1]);
+          double epsi = - atan(coeffs[1]);
           state << 0, 0, 0, v, cte, epsi;
           //std::cout << "State " << std::endl << state << std::endl;
 
